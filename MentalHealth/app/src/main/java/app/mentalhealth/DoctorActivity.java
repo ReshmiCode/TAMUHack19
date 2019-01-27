@@ -49,7 +49,7 @@ public class DoctorActivity extends Activity {
                         final Map<String, Object> fdata = document.getData();
                         String ID = fdata.get("patientID1").toString();  // doctors have their patient's IDs
                         // CHANGE ID
-                        DocumentReference patientRef = db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi");
+                        DocumentReference patientRef = db.collection("pastMoods").document(ID);
                         getPatient(patientRef, ID);
                     } else {
                         Log.d(TAG, "No such document");
@@ -63,7 +63,7 @@ public class DoctorActivity extends Activity {
         final Button add = findViewById(R.id.addPatient);
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // startActivity(new Intent(DoctorActivity.this, AddPatient.class));
+                startActivity(new Intent(DoctorActivity.this, AddPatient.class));
                 // ADD AFTER ADD PATIENT CLASS
             }
         });
@@ -74,7 +74,6 @@ public class DoctorActivity extends Activity {
                 FirebaseAuth auth = FirebaseAuth.getInstance();
                 auth.signOut();
                 startActivity(new Intent(DoctorActivity.this, LoginActivity.class));
-                // startActivity(new Intent(DoctorActivity.this, AddPatient.class));
                 // ADD AFTER ADD PATIENT CLASS
             }
         });
@@ -88,7 +87,7 @@ public class DoctorActivity extends Activity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         final Map<String, Object> fdata = document.getData();
-                        String moodInput = fdata.get("1 days ago").toString();
+                        String moodInput = fdata.get("0 days ago").toString();
                         mood.setText("Patient " + ID.substring(0, 5) + " felt " + moodInput);
                     } else {
                         Log.d(TAG, "No such document");

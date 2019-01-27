@@ -14,7 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".AddPatient"></activity>
         <activity android:name=".mood" />
-        <activity android:name=".DoctorView" />
         <activity android:name=".DoctorActivity" />
         <activity android:name=".CreateAccActivity" />
         <activity android:name=".moodhistory" />

@@ -40,7 +40,7 @@ public class AddPatient extends Activity {
         final Button button = findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(AddPatient.this, DoctorView.class));
+                startActivity(new Intent(AddPatient.this, DoctorActivity.class));
             }
         });
 
@@ -113,7 +113,7 @@ public class AddPatient extends Activity {
                     }
                 });
 
-                startActivity(new Intent(AddPatient.this, DoctorView.class));
+                startActivity(new Intent(AddPatient.this, DoctorActivity.class));
             }
         });
     }
