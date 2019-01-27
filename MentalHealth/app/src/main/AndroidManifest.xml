@@ -27,13 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".moodhistory" />
         <activity android:name=".medList">
         </activity>
-        <activity android:name=".PatientView" />
-        <activity android:name=".mood" />
-        <activity android:name=".CreateAccActivity" />
-        <activity android:name=".DoctorActivity" />
         <activity android:name=".FingerActivity" />
         <activity android:name=".EmotionActivity">
         </activity>

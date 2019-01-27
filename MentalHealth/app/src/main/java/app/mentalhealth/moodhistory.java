@@ -40,7 +40,7 @@ public class moodhistory extends Activity {
         final Button button = findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(moodhistory.this, mood.class));            }
+                startActivity(new Intent(moodhistory.this, medList.class));            }
         });
 
         FirebaseApp.initializeApp(this);
