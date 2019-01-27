@@ -75,7 +75,7 @@ public class LoginActivity extends Activity {
                                     final Map<String, Object> fdata = document.getData();
                                     boolean isDoc = (boolean) fdata.get("isDoc");
                                     if (isDoc) startActivity(new Intent(LoginActivity.this, DoctorActivity.class));
-                                    else startActivity(new Intent(LoginActivity.this, mood.class));
+                                    else startActivity(new Intent(LoginActivity.this, medList.class));
                                 } else {
                                     Log.d(TAG, "No such document");
                                 }
