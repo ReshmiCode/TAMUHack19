@@ -18,6 +18,15 @@ import android.content.DialogInterface;
 
 public class medList extends Activity implements MyRecyclerViewAdapter.ItemClickListener  {
 
+    String name;
+    String dose;
+    String time;
+
+    public medList(String name, String dose, String time){
+        this.name = name;
+        this.dose = dose;
+        this.time = time;
+    }
     MyRecyclerViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +52,8 @@ public class medList extends Activity implements MyRecyclerViewAdapter.ItemClick
 
         addMedsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(medList.this);
                 builder.setTitle("Enter New Medication");
