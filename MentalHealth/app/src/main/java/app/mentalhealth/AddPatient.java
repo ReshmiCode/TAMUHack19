@@ -113,7 +113,7 @@ public class AddPatient extends Activity {
                     }
                 });
 
-                startActivity(new Intent(AddPatient.this, DoctorView.class));
+                startActivity(new Intent(AddPatient.this, DoctorActivity.class));
             }
         });
     }

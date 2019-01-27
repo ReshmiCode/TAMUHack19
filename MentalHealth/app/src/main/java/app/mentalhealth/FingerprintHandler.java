@@ -90,8 +90,8 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         final Map<String, Object> fdata = document.getData();
-                        // boolean isDoc = (boolean) fdata.get("isDoctor");
-                        boolean isDoc = true;
+                        boolean isDoc = (boolean) fdata.get("isDoc");
+                        // boolean isDoc = true;
                         if (isDoc) context.startActivity(new Intent(context, DoctorActivity.class));
                         else context.startActivity(new Intent(context, mood.class));
                     } else {
