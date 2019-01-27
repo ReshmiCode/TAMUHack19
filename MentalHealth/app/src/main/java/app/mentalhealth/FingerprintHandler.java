@@ -93,7 +93,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
                         boolean isDoc = (boolean) fdata.get("isDoc");
                         // boolean isDoc = true;
                         if (isDoc) context.startActivity(new Intent(context, DoctorActivity.class));
-                        else context.startActivity(new Intent(context, mood.class));
+                        else context.startActivity(new Intent(context, medList.class));
                     } else {
                         Log.d(TAG, "No such document");
                     }

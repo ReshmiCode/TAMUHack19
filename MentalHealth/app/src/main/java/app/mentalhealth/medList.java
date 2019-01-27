@@ -1,6 +1,7 @@
 package app.mentalhealth;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.ArrayList;
@@ -22,6 +23,12 @@ public class medList extends Activity implements MyRecyclerViewAdapter.ItemClick
     String dose;
     String time;
 
+    public medList(){
+        this.name = "name";
+        this.dose = "dose";
+        this.time = "time";
+    }
+
     public medList(String name, String dose, String time){
         this.name = name;
         this.dose = dose;
@@ -32,7 +39,6 @@ public class medList extends Activity implements MyRecyclerViewAdapter.ItemClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_list);
-
 
         // data to populate the RecyclerView with
         final ArrayList<String> medList = new ArrayList<>();
@@ -103,5 +109,13 @@ public class medList extends Activity implements MyRecyclerViewAdapter.ItemClick
     public void onItemClick(View view, int position) {
         Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
+
+    public void mood(View view) {
+        startActivity(new Intent(medList.this, mood.class));
     }
+
+    public void pic(View view) {
+        startActivity(new Intent(medList.this, EmotionActivity.class));
+    }
+}
 
