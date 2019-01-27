@@ -4,23 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientView">
+    tools:context=".PatientView"
+    android:background="@drawable/gradient">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="316dp"
         android:layout_height="46dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Welcome back patient!"
+        android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="420dp"
         android:layout_height="730dp"
         android:visibility="invisible"
-        tools:layout_editor_absoluteX="-8dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +41,59 @@
         android:layout_width="140dp"
         android:layout_height="24dp"
         android:text="Next appointment"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="77dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Medications"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="282dp" />
+
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:background="@drawable/calendar"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="133dp" />
+
+    <Button
+        android:id="@+id/medListDummy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/medicationList"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <Button
+        android:id="@+id/moodButton"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        android:background="@drawable/moodButton"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="524dp" />
+
+    <Button
+        android:id="@+id/sleepButton"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        android:background="@drawable/sleepButton"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="524dp" />
+
+    <Button
+        android:id="@+id/notesButton"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        android:background="@drawable/notesButton"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="524dp" />
 
 </android.support.constraint.ConstraintLayout>
