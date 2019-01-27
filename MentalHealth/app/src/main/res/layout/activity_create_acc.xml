@@ -4,22 +4,37 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/gradient"
-    tools:context=".LoginActivity">
+    tools:context=".CreateAccActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:layout_margin="70px">
+        android:layout_margin="100px">
+
+    <ImageView
+        android:id="@+id/profpic"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:layout_marginBottom="20px"
+        tools:src="@drawable/profpic" />
 
     <EditText
-        android:id="@+id/email"
-        android:layout_marginTop="150px"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:background="@drawable/rounded_fields"
         android:layout_marginBottom="20px"
+        android:background="@drawable/rounded_fields"
+        android:hint="@string/name"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="20px"
+        android:background="@drawable/rounded_fields"
         android:hint="@string/email" />
 
     <EditText
@@ -27,27 +42,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:layout_marginBottom="20px"
         android:background="@drawable/rounded_fields"
         android:hint="@string/password" />
 
+    <Switch
+        android:id="@+id/doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you a doctor?"
+        android:layout_marginBottom="20px" />
+
     <Button
-        android:id="@+id/logIn"
-        android:layout_width="wrap_content"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="logIn"
-        android:layout_margin="20px"
-        android:background="#3087bf"
-        android:text="Log In" />
+        android:text="Submit"
+        android:onClick="create"
+        android:background="#3087bf"/>
 
-    <TextView
-        android:id="@+id/create"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="18dp"
-        android:text="@string/register"/>
-
-    </LinearLayout>
+</LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mood">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="367dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="16dp"
+        android:text="Choose your mood for today"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/happiness"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:src="@drawable/happy" />
+
+    <ImageButton
+        android:id="@+id/anger"
+        android:layout_width="204dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/angry"
+        app:layout_constraintTop_toBottomOf="@+id/happiness"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ImageButton
+        android:id="@+id/surprise"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:src="@drawable/surprised"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sadness" />
+
+    <ImageButton
+        android:id="@+id/sadness"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/happiness"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:src="@drawable/sad" />
+
+    <ImageButton
+        android:id="@+id/neutral"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/fear"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anger"
+        android:src="@drawable/neutral" />
+
+    <ImageButton
+        android:id="@+id/fear"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:src="@drawable/fear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surprise" />
+
+</android.support.constraint.ConstraintLayout>
