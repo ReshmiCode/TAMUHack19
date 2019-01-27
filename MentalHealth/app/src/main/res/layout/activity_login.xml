@@ -12,20 +12,29 @@
         android:orientation="vertical"
         android:layout_margin="70px">
 
+        <TextView
+            android:id="@+id/logInText"
+            android:layout_marginTop="150px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="40dp"
+            android:text="TheraTracker"/>
+
     <EditText
         android:id="@+id/email"
-        android:layout_marginTop="150px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_height="90px"
         android:inputType="textPersonName"
         android:background="@drawable/rounded_fields"
-        android:layout_marginBottom="20px"
+        android:layout_marginBottom="30px"
         android:hint="@string/email" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90px"
         android:inputType="textPersonName"
         android:background="@drawable/rounded_fields"
         android:hint="@string/password" />
@@ -36,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="logIn"
-        android:layout_margin="20px"
+        android:layout_margin="45px"
         android:background="#3087bf"
+        android:textSize="18dp"
         android:text="Log In" />
 
     <TextView
@@ -45,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:text="@string/register"/>
 
     </LinearLayout>
