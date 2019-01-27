@@ -1,6 +1,7 @@
 package app.mentalhealth;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -12,6 +13,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,15 +25,19 @@ import static android.content.ContentValues.TAG;
 
 public class mood extends Activity {
 
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood);
 
+        auth = FirebaseAuth.getInstance();
+
         FirebaseApp.initializeApp(this);
         // Access a Cloud Firestore instance from your Activity
         final FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi");
+        DocumentReference docRef = db.collection("pastMoods").document(auth.getUid());
         final Map<String, Object> data = new HashMap<>();
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -39,14 +45,17 @@ public class mood extends Activity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        //
+                        //Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         final Map<String, Object> fdata = document.getData();
-                        data.put("1 day ago",fdata.get("1 day ago"));
+                        data.put("0 days ago",fdata.get("0 days ago"));
+                        data.put("1 days ago",fdata.get("1 days ago"));
                         data.put("2 days ago",fdata.get("2 days ago"));
                         data.put("3 days ago",fdata.get("3 days ago"));
                         data.put("4 days ago",fdata.get("4 days ago"));
                         data.put("5 days ago",fdata.get("5 days ago"));
                         data.put("6 days ago",fdata.get("6 days ago"));
+
                     } else {
                         Log.d(TAG, "No such document");
                     }
@@ -67,9 +76,10 @@ public class mood extends Activity {
                 fdata.put("5 days ago", fdata.get("4 days ago"));
                 fdata.put("4 days ago", fdata.get("3 days ago"));
                 fdata.put("3 days ago", fdata.get("2 days ago"));
-                fdata.put("2 days ago", fdata.get("1 day ago"));
-                fdata.put("1 day ago", "happiness");
-                db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi")
+                fdata.put("2 days ago", fdata.get("1 days ago"));
+                fdata.put("1 days ago", fdata.get("0 days ago"));
+                fdata.put("0 days ago", "happiness");
+                db.collection("pastMoods").document(auth.getUid())
                         .set(fdata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -83,6 +93,7 @@ public class mood extends Activity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
+                startActivity(new Intent(mood.this, moodhistory.class));
             }
         });
 
@@ -95,9 +106,10 @@ public class mood extends Activity {
                 fdata.put("5 days ago", fdata.get("4 days ago"));
                 fdata.put("4 days ago", fdata.get("3 days ago"));
                 fdata.put("3 days ago", fdata.get("2 days ago"));
-                fdata.put("2 days ago", fdata.get("1 day ago"));
-                fdata.put("1 day ago", "sadness");
-                db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi")
+                fdata.put("2 days ago", fdata.get("1 days ago"));
+                fdata.put("1 days ago", fdata.get("0 days ago"));
+                fdata.put("0 days ago", "sadness");
+                db.collection("pastMoods").document(auth.getUid())
                         .set(fdata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -111,7 +123,7 @@ public class mood extends Activity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-
+                startActivity(new Intent(mood.this, moodhistory.class));
             }
         });
 
@@ -124,9 +136,10 @@ public class mood extends Activity {
                 fdata.put("5 days ago", fdata.get("4 days ago"));
                 fdata.put("4 days ago", fdata.get("3 days ago"));
                 fdata.put("3 days ago", fdata.get("2 days ago"));
-                fdata.put("2 days ago", fdata.get("1 day ago"));
-                fdata.put("1 day ago", "anger");
-                db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi")
+                fdata.put("2 days ago", fdata.get("1 days ago"));
+                fdata.put("1 days ago", fdata.get("0 days ago"));
+                fdata.put("0 days ago", "anger");
+                db.collection("pastMoods").document(auth.getUid())
                         .set(fdata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -140,7 +153,7 @@ public class mood extends Activity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-
+                startActivity(new Intent(mood.this, moodhistory.class));
             }
         });
 
@@ -153,9 +166,10 @@ public class mood extends Activity {
                 fdata.put("5 days ago", fdata.get("4 days ago"));
                 fdata.put("4 days ago", fdata.get("3 days ago"));
                 fdata.put("3 days ago", fdata.get("2 days ago"));
-                fdata.put("2 days ago", fdata.get("1 day ago"));
-                fdata.put("1 day ago", "surprise");
-                db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi")
+                fdata.put("2 days ago", fdata.get("1 days ago"));
+                fdata.put("1 days ago", fdata.get("0 days ago"));
+                fdata.put("0 days ago", "surprise");
+                db.collection("pastMoods").document(auth.getUid())
                         .set(fdata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -169,7 +183,7 @@ public class mood extends Activity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-
+                startActivity(new Intent(mood.this, moodhistory.class));
             }
         });
 
@@ -182,9 +196,10 @@ public class mood extends Activity {
                 fdata.put("5 days ago", fdata.get("4 days ago"));
                 fdata.put("4 days ago", fdata.get("3 days ago"));
                 fdata.put("3 days ago", fdata.get("2 days ago"));
-                fdata.put("2 days ago", fdata.get("1 day ago"));
-                fdata.put("1 day ago", "neutral");
-                db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi")
+                fdata.put("2 days ago", fdata.get("1 days ago"));
+                fdata.put("1 days ago", fdata.get("0 days ago"));
+                fdata.put("0 days ago", "neutral");
+                db.collection("pastMoods").document(auth.getUid())
                         .set(fdata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -198,7 +213,7 @@ public class mood extends Activity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-
+                startActivity(new Intent(mood.this, moodhistory.class));
             }
         });
 
@@ -211,9 +226,10 @@ public class mood extends Activity {
                 fdata.put("5 days ago", fdata.get("4 days ago"));
                 fdata.put("4 days ago", fdata.get("3 days ago"));
                 fdata.put("3 days ago", fdata.get("2 days ago"));
-                fdata.put("2 days ago", fdata.get("1 day ago"));
-                fdata.put("1 day ago", "fear");
-                db.collection("pastMoods").document("6cNOF7Dbfo59FB968Iqi")
+                fdata.put("2 days ago", fdata.get("1 days ago"));
+                fdata.put("1 days ago", fdata.get("0 days ago"));
+                fdata.put("0 days ago", "fear");
+                db.collection("pastMoods").document(auth.getUid())
                         .set(fdata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -227,7 +243,7 @@ public class mood extends Activity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-
+                startActivity(new Intent(mood.this, moodhistory.class));
             }
         });
     }

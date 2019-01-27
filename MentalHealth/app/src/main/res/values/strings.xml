@@ -4,4 +4,5 @@
     <string name="password">Password</string>
     <string name="register">Not registered? Create an account</string>
     <string name="name">Full Name</string>
+    <string name="multilines">Name:\nAge:</string>
 </resources>
