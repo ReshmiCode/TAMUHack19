@@ -47,6 +47,9 @@ public class DoctorActivity extends Activity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         final Map<String, Object> fdata = document.getData();
+                        if (fdata.get("patientID1") == null) {
+                            startActivity(new Intent(DoctorActivity.this, LoginActivity.class));
+                        }
                         String ID = fdata.get("patientID1").toString();  // doctors have their patient's IDs
                         // CHANGE ID
                         DocumentReference patientRef = db.collection("pastMoods").document(ID);
@@ -74,7 +77,6 @@ public class DoctorActivity extends Activity {
                 FirebaseAuth auth = FirebaseAuth.getInstance();
                 auth.signOut();
                 startActivity(new Intent(DoctorActivity.this, LoginActivity.class));
-                // ADD AFTER ADD PATIENT CLASS
             }
         });
     }
