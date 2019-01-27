@@ -30,9 +30,9 @@ public class LoginActivity extends Activity {
 
         auth = FirebaseAuth.getInstance();
 
-        /* if (auth.getCurrentUser() != null) { // already logged in
-            startActivity(new Intent(LoginActivity.this, DoctorActivity.class));
-        } */
+        if (auth.getCurrentUser() != null) { // already logged in
+            startActivity(new Intent(LoginActivity.this, FingerActivity.class));
+        }
 
         email = (EditText)findViewById(R.id.email);
         pass = (EditText)findViewById(R.id.password);

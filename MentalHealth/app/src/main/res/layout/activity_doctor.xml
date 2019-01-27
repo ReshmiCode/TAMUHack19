@@ -13,7 +13,16 @@
         android:orientation="vertical"
         android:layout_margin="80px">
 
-    <TextView
+        <Button
+            android:id="@+id/addPatient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#3087bf"
+            android:layout_gravity="right"
+            android:textSize="30dp"
+            android:text="+" />
+
+        <TextView
         android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -28,6 +37,15 @@
         android:layout_height="wrap_content"
         android:textSize="50px"
         android:text="TextView"/>
+
+        <Button
+            android:id="@+id/logOut"
+            android:layout_margin="90px"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#3087bf"
+            android:text="Sign Out" />
 
     </LinearLayout>
 
