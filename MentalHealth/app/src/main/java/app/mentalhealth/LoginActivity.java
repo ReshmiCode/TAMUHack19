@@ -39,5 +39,7 @@ public class LoginActivity extends Activity {
             Toast.makeText(this, "worked", Toast.LENGTH_SHORT).show();
         }
         else Toast.makeText(this, "didn't work", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, mood.class);
+        startActivity(intent);
     }
 }
