@@ -3,6 +3,7 @@
     package="app.mentalhealth">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +24,8 @@
         <activity android:name=".PatientView" />
         <activity android:name=".mood" />
         <activity android:name=".CreateAccActivity" />
-        <activity android:name=".DoctorActivity"></activity>
+        <activity android:name=".DoctorActivity" />
+        <activity android:name=".FingerActivity"></activity>
     </application>
 
 </manifest>
