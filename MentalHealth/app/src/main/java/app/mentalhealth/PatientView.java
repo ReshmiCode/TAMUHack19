@@ -1,9 +1,10 @@
 package app.mentalhealth;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PatientView extends AppCompatActivity {
+public class PatientView extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

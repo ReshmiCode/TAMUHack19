@@ -12,37 +12,47 @@
         android:orientation="vertical"
         android:layout_margin="100px">
 
+        <TextView
+            android:id="@+id/createAccText"
+            android:layout_marginTop="50px"
+            android:layout_marginBottom="60px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="40dp"
+            android:text="Create Account"/>
+
     <ImageView
         android:id="@+id/profpic"
         android:layout_width="match_parent"
         android:layout_height="200px"
-        android:layout_marginBottom="20px"
+        android:layout_marginBottom="60px"
         tools:src="@drawable/profpic" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90px"
         android:inputType="textPersonName"
-        android:layout_marginBottom="20px"
+        android:layout_marginBottom="60px"
         android:background="@drawable/rounded_fields"
         android:hint="@string/name"/>
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90px"
         android:inputType="textPersonName"
-        android:layout_marginBottom="20px"
+        android:layout_marginBottom="60px"
         android:background="@drawable/rounded_fields"
         android:hint="@string/email" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90px"
         android:inputType="textPersonName"
-        android:layout_marginBottom="20px"
+        android:layout_marginBottom="60px"
         android:background="@drawable/rounded_fields"
         android:hint="@string/password" />
 
@@ -51,7 +61,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Are you a doctor?"
-        android:layout_marginBottom="20px" />
+        android:textSize="20dp"
+        android:layout_marginBottom="60px" />
 
     <Button
         android:id="@+id/button"
@@ -59,6 +70,7 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:onClick="create"
+        android:textSize="18dp"
         android:background="#3087bf"/>
 
 </LinearLayout>
