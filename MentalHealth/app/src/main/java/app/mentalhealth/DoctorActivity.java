@@ -47,13 +47,12 @@ public class DoctorActivity extends Activity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         final Map<String, Object> fdata = document.getData();
-                        if (fdata.get("patientID1") == null) {
-                            startActivity(new Intent(DoctorActivity.this, LoginActivity.class));
+                        for (int i = 1; i <= fdata.size()-2; i++) {
+                            String ID = fdata.get("patientID"+i).toString();  // doctors have their patient's IDs
+                            // CHANGE ID
+                            DocumentReference patientRef = db.collection("pastMoods").document(ID);
+                            getPatient(patientRef, ID);
                         }
-                        String ID = fdata.get("patientID1").toString();  // doctors have their patient's IDs
-                        // CHANGE ID
-                        DocumentReference patientRef = db.collection("pastMoods").document(ID);
-                        getPatient(patientRef, ID);
                     } else {
                         Log.d(TAG, "No such document");
                     }
@@ -90,7 +89,7 @@ public class DoctorActivity extends Activity {
                     if (document.exists()) {
                         final Map<String, Object> fdata = document.getData();
                         String moodInput = fdata.get("0 days ago").toString();
-                        mood.setText("Patient " + ID.substring(0, 5) + " felt " + moodInput);
+                        mood.setText(mood.getText() + "\n" + "Patient " + ID.substring(0, 5) + " felt " + moodInput);
                     } else {
                         Log.d(TAG, "No such document");
                     }
