@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.text.InputType;
 import android.content.DialogInterface;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class medList extends Activity implements MyRecyclerViewAdapter.ItemClickListener  {
 
     String name;
@@ -52,6 +54,15 @@ public class medList extends Activity implements MyRecyclerViewAdapter.ItemClick
         adapter = new MyRecyclerViewAdapter(this, medList);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
+
+        final Button logOut = findViewById(R.id.logOut);
+        logOut.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                auth.signOut();
+                startActivity(new Intent(medList.this, LoginActivity.class));
+            }
+        });
 
 
         final Button addMedsButton = findViewById(R.id.add_meds_button);
