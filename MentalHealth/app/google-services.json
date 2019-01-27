@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "443916829415-6pd3al9ej1svfu2tghbibnfiguml5hcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.mentalhealth",
+            "certificate_hash": "47201e56ff7ca9d5f4467388cfdacc2eed817d93"
+          }
+        },
+        {
           "client_id": "443916829415-v17t2lrci2c3b7mgumg82h3bqts6k546.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443916829415-v17t2lrci2c3b7mgumg82h3bqts6k546.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
