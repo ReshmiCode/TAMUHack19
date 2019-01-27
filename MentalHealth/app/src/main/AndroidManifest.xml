@@ -13,8 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddPatient" />
-        <activity android:name=".DoctorView" />
+
+        <activity android:name=".AddPatient"></activity>
+        <activity android:name=".mood" />
+        <activity android:name=".DoctorActivity" />
+        <activity android:name=".CreateAccActivity" />
+        <activity android:name=".moodhistory" />
+        <activity android:name=".PatientView" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,13 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".moodhistory" />
         <activity android:name=".medList">
         </activity>
-        <activity android:name=".PatientView" />
-        <activity android:name=".mood" />
-        <activity android:name=".CreateAccActivity" />
-        <activity android:name=".DoctorActivity" />
         <activity android:name=".FingerActivity" />
         <activity android:name=".EmotionActivity">
         </activity>

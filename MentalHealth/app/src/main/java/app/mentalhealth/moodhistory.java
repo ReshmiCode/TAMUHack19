@@ -40,7 +40,7 @@ public class moodhistory extends Activity {
         final Button button = findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(moodhistory.this, mood.class));            }
+                startActivity(new Intent(moodhistory.this, medList.class));            }
         });
 
         FirebaseApp.initializeApp(this);
@@ -82,7 +82,7 @@ public class moodhistory extends Activity {
                             Object emotion = data.get(key);
                             Log.d("PROB", emotion+"");
                             image = pastfaces[day];
-                            if ((emotion.toString()).equals("N/A"))
+                            if (emotion == null || (emotion.toString()).equals("N/A"))
                                 image.setImageResource(R.drawable.gray);
                             else if ((emotion.toString()).equals("surprise"))
                                 image.setImageResource(R.drawable.smallsurprised);
