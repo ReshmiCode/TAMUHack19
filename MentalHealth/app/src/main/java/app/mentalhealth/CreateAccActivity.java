@@ -19,6 +19,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateAccActivity extends Activity {
 
@@ -26,7 +32,8 @@ public class CreateAccActivity extends Activity {
     EditText email, pass, name;
     Button create;
     Switch doctor;
-    private FirebaseAuth auth;
+    FirebaseAuth auth;
+    FirebaseFirestore database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +50,8 @@ public class CreateAccActivity extends Activity {
     }
 
     public void create(View view) {
-        String emailInput = email.getText().toString().trim();
-        String passInput = pass.getText().toString().trim();
+        final String emailInput = email.getText().toString().trim();
+        final String passInput = pass.getText().toString().trim();
 
         if (TextUtils.isEmpty(emailInput)) {
             Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -60,6 +67,13 @@ public class CreateAccActivity extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    database = FirebaseFirestore.getInstance();
+                    // User user = new User(emailInput, passInput, doctor.isChecked());
+                    Map<String, Object> user = new HashMap<>();
+                    user.put("isDoc", doctor.isChecked());
+                    user.put("name", name.getText().toString().trim());
+                    database.collection("users").document(auth.getUid()).set(user);
+
                     Toast.makeText(CreateAccActivity.this, "Registered", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);

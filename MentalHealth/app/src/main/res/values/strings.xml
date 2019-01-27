@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mental Health</string>
+    <string name="app_name">TheraTracker</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="register">Not registered? Create an account</string>
