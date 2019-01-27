@@ -31,7 +31,7 @@ public class LoginActivity extends Activity {
         auth = FirebaseAuth.getInstance();
 
         /* if (auth.getCurrentUser() != null) { // already logged in
-            startActivity(new Intent(LoginActivity.this, mood.class));
+            startActivity(new Intent(LoginActivity.this, DoctorActivity.class));
         } */
 
         email = (EditText)findViewById(R.id.email);
@@ -56,8 +56,7 @@ public class LoginActivity extends Activity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) Toast.makeText(LoginActivity.this, "didn't work", Toast.LENGTH_SHORT).show();
                 else {
-                    Toast.makeText(LoginActivity.this, "worked", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, mood.class);
+                    Intent intent = new Intent(LoginActivity.this, DoctorActivity.class);
                     startActivity(intent);
                 }
             }
